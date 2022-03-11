@@ -4,6 +4,8 @@ export enum Color {
   azul,
   lila,
   blanco,
+  rosa,
+  marron
 }
 
 export interface Heroe {
