@@ -1,0 +1,61 @@
+<div class="text-layout">
+  <h1>Pipes Básicos</h1>
+  <p>Incluidos en Angular</p>
+</div>
+<div class="grid">
+  <div class="col-4">
+    <p-card header="Uppercase" subheader="Subheader"></p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Uppercase"></p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Uppercase"></p-card>
+  </div>
+</div>
+<div class="text-layout">
+  <h1>Date | Fecha | Pipe</h1>
+  <p>Pipes para fechas</p>
+</div>
+<div class="grid">
+  <div class="col-6">
+    <p-card>
+      <ul>
+        <li>Fecha</li>
+        <li>Fecha | date</li>
+        <li>Fecha | date: "short"</li>
+        <li>Fecha | date: "long"</li>
+        <li>Fecha | date: "longDate"</li>
+        <li>Fecha | date: "fullDate"</li>
+        <li>Fecha | date: "mediumTime"</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>Fecha | date: "mediumTime":"GMT-6"</li>
+        <li>Fecha | date: "mediumTime":"GMT-4"</li>
+        <!-- mirar importacion modulos idiomas en app module -->
+        <li>fecha | date: "fullDate":"":"fr"</li>
+      </ul>
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card
+      ><ul>
+        <li>{{ fecha }}</li>
+        <li>{{ fecha | date }}</li>
+        <li>{{ fecha | date: "short" }}</li>
+        <li>{{ fecha | date: "long" }}</li>
+        <li>{{ fecha | date: "longDate" }}</li>
+        <li>{{ fecha | date: "fullDate" }}</li>
+        <li>{{ fecha | date: "mediumTime" }}</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>{{ fecha | date: "mediumTime":"GMT-6" }}</li>
+
+        <li>{{ fecha | date: "mediumTime":"GMT-4" }}</li>
+        <li>{{ fecha | date: "fullDate":"":"fr" }}</li>
+      </ul></p-card
+    >
+  </div>
+</div>

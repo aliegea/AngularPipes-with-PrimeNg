@@ -1,0 +1,70 @@
+<div class="text-layout">
+  <h1>Decimal Pipes y porcentaje</h1>
+  <p>Incluidos en Angular</p>
+</div>
+<div class="grid">
+  <div class="col md:col-6">
+    <p-fieldset legend="I18nSelectPipe" [toggleable]="true">
+      <p>Saludos,{{ nombre }} es un placer {{ genero | i18nSelect: invMap }}</p>
+      <button
+        pButton
+        type="button"
+        label="Change Name"
+        class="p-button-help p-button-outlined"
+        (click)="cambiarNombre()"
+      ></button>
+    </p-fieldset>
+  </div>
+  <div class="col md:col-6">
+    <p-fieldset legend="I18nPluralPipe" [toggleable]="true">
+      <p>Actualmente tenemos {{ clientes.length | i18nPlural: clientesMap }}</p>
+      <button
+        pButton
+        type="button"
+        label="Delete"
+        class="p-button-danger p-button-outlined"
+        (click)="borrarCliente()"
+      ></button>
+    </p-fieldset>
+  </div>
+  <div class="col md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+      <p>Original</p>
+      <pre>{{ clientes }}</pre>
+      <p>slice:0:2</p>
+      <pre>{{ clientes | slice: 0:2 }}</pre>
+      <p>slice:2:3</p>
+      <pre>{{ clientes | slice: 2:3 }}</pre>
+    </p-fieldset>
+  </div>
+  <div class="col md:col-6">
+    <p-fieldset legend="Json Pipe" [toggleable]="true">
+      <p>Maniene orden original</p>
+      <pre>
+        {{ persona | json }}
+      </pre>
+      <pre>
+        {{ heroes | json }}
+      </pre>
+    </p-fieldset>
+  </div>
+  <div class="col md:col-6">
+    <p-fieldset legend="Key value Pipe" [toggleable]="true">
+      <p>Ordena por orden alfabético</p>
+      <ul>
+        <li *ngFor="let person of persona | keyvalue">
+          <b>{{ person.key }}</b
+          >: {{ person.value }}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+  <div class="col md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true"
+      ><p>Se suscribe al observable y muestra el valor</p>
+      <h2>{{ miObservable | async }}</h2>
+      <p *ngIf="!(promesa | async)">Estamos esperando 10 seg. otro valor....</p>
+      <h2>{{ promesa | async }}</h2>
+    </p-fieldset>
+  </div>
+</div>
